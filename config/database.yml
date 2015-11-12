@@ -51,4 +51,4 @@ production:
   <<: *default
   database: ninja_corgi_production
   username: <%= ENV['DB_USER'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
+  password: <%= ENV['DB_PASS'] %>
