@@ -24,6 +24,6 @@ To run the test suite simply execute:
    ```
  ---
  
- ### TO-DOs
- 1. Create deploy script
- 2. Travis-CI
+### TO-DOs
+1. Create deploy script
+2. Travis-CI
