@@ -9,6 +9,7 @@ Live version can be found [here](http://laroberto.xyz/).
 
 1. `bundle exec install`
 2. `bundle exec rake db:create`
+3. setup `SECRET_KEY_BASE`
 
 ## Running tests
 
