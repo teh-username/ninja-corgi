@@ -19,6 +19,7 @@ To run the test suite simply execute:
 1. [Phusion Passenger](https://www.phusionpassenger.com/) REALLY needs the 1024 MB recommended RAM. I tried with 512 MB and 1 GB and failed miserably.
 2. Apache2 does not import environment variables from `~/.bashrc`. All variables must be at `/etc/apache2/envvars`.
 3. Don't forget to set the following in `config/secrets.yml`:
+
    ```ruby
     secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
     secret_token: <%= ENV["SECRET_KEY_BASE"] %>
