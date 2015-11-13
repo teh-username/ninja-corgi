@@ -16,13 +16,17 @@ To run the test suite simply execute:
 ---
 
 ### Prod deployment pitfalls
-1. Apache2 does not import environment variables from `~/.bashrc`. All variables must be at `/etc/apache2/envvars`.
-2. Don't forget to set the following in `config/secrets.yml`:
+1. [Phusion Passenger](https://www.phusionpassenger.com/) REALLY needs the 1024 MB recommended RAM. I tried with 512 MB and 1 GB and failed miserably.
+2. Apache2 does not import environment variables from `~/.bashrc`. All variables must be at `/etc/apache2/envvars`.
+3. Don't forget to set the following in `config/secrets.yml`:
    ```ruby
     secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
     secret_token: <%= ENV["SECRET_KEY_BASE"] %>
    ```
  ---
+4. [Precompile assets before hand](http://guides.rubyonrails.org/asset_pipeline.html#in-production)
+5. `sudo a2enmod expires`
+6. `sudo a2enmod headers`
  
 ### TO-DOs
 1. Create deploy script
