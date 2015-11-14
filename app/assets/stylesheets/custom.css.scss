@@ -19,7 +19,8 @@ body {
   }
 }
 
-p {
+// needs IE 9+ for :not
+p:not(.text-muted) {
   font-size: 1.7em;
 }
 
