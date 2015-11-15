@@ -2,7 +2,9 @@
 @import "bootstrap";
 
 // some custom css to get things working
-// others were ninja'd from http://getbootstrap.com/examples/sticky-footer-navbar/
+// others were ninja'd from:
+// http://getbootstrap.com/examples/sticky-footer-navbar/
+// https://css-tricks.com/examples/hrs/
 
 html {
   position: relative;
@@ -31,6 +33,21 @@ code {
   font-size: 80%;
 }
 
+.media-body {
+  text-align: justify;
+  &:not(.text-muted) {
+    font-size: 16px;
+  }
+}
+
+.brand-image {
+  margin-bottom: 5px;
+}
+
+.navbar-brand {
+  padding-top: 7px;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -47,13 +64,8 @@ code {
   margin: 20px 0;
 }
 
-// https://css-tricks.com/examples/hrs/
 hr.dashed {
     border: 0;
     border-bottom: 1px dashed #ccc;
     background: #999;
-}
-
-.media-body {
-  text-align: justify;
 }
