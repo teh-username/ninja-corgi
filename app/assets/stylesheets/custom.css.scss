@@ -6,6 +6,8 @@
 // http://getbootstrap.com/examples/sticky-footer-navbar/
 // https://css-tricks.com/examples/hrs/
 
+$font-size: 1.3em;
+
 html {
   position: relative;
   min-height: 100%;
@@ -25,7 +27,7 @@ p {
   text-align: justify;
   // needs IE 9+ for :not
   &:not(.text-muted) {
-    font-size: 1.3em;
+    font-size: $font-size;
   }
 }
 
@@ -65,7 +67,11 @@ code {
 }
 
 hr.dashed {
-    border: 0;
-    border-bottom: 1px dashed #ccc;
-    background: #999;
+  border: 0;
+  border-bottom: 1px dashed #ccc;
+  background: #999;
+}
+
+.navbar-right {
+  font-size: $font-size;
 }
