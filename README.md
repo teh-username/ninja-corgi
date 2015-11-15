@@ -30,5 +30,6 @@ To run the test suite simply execute:
 6. `sudo a2enmod headers`
  
 ### TO-DOs
+0. Moar unit tests
 1. Create deploy script
 2. Travis-CI

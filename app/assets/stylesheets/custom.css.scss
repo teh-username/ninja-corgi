@@ -19,9 +19,12 @@ body {
   }
 }
 
-// needs IE 9+ for :not
-p:not(.text-muted) {
-  font-size: 1.7em;
+p {
+  text-align: justify;
+  // needs IE 9+ for :not
+  &:not(.text-muted) {
+    font-size: 1.3em;
+  }
 }
 
 code {
@@ -42,4 +45,15 @@ code {
 
 .container .text-muted {
   margin: 20px 0;
+}
+
+// https://css-tricks.com/examples/hrs/
+hr.dashed {
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+}
+
+.media-body {
+  text-align: justify;
 }
