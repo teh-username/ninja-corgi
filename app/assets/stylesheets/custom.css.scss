@@ -7,7 +7,7 @@
 // http://getbootstrap.com/examples/sticky-footer-navbar/
 // https://css-tricks.com/examples/hrs/
 
-$font-size: 1.3em;
+$font-size: 1.4em;
 $footer-height: 96px;
 
 html {
@@ -84,4 +84,8 @@ footer a {
 
 .jumbotron li {
   font-size: 1.3em;
+}
+
+.skills-list {
+  font-size: $font-size;
 }
