@@ -74,6 +74,12 @@ hr.dashed {
   background: #999;
 }
 
+hr.solid {
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  background: #999;
+}
+
 .navbar-right {
   font-size: $font-size;
 }
@@ -92,4 +98,8 @@ footer a {
 
 .portfolio a {
   color: inherit;
+}
+
+textarea {
+  resize: vertical;
 }

@@ -8,6 +8,7 @@
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
     <%= render 'layouts/analytics' %>
+    <%= render 'layouts/recaptcha' if params['action'] == contact_path[1..-1] %>
   </head>
   <body>
     <%= render 'layouts/navbar' %>

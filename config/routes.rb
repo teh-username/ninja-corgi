@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'main_controller#index'
   get 'about' => 'main_controller#about'
   get 'portfolio' => 'main_controller#portfolio'
+  get 'contact' => 'main_controller#contact'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
