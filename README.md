@@ -33,3 +33,5 @@ To run the test suite simply execute:
 0. Moar unit tests
 1. Create deploy script
 2. Travis-CI
+3. Login / Contact me page
+4. Authy

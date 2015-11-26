@@ -17,3 +17,7 @@
 
 # Ignore all precompiled assets
 public/assets
+
+# Ignore all environment variables
+.env.production
+.env.development

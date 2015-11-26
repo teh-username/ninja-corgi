@@ -11,6 +11,8 @@ gem 'jbuilder',         '2.2.3'
 gem 'sdoc',             '0.4.0', group: :doc
 gem 'mysql2',           '~> 0.3.18'
 gem 'font-awesome-rails'
+gem 'recaptcha', require: 'recaptcha/rails'
+gem 'dotenv-rails', :groups => [:development, :test, :production]
 
 group :development, :test do
   gem 'byebug',      '3.4.0'

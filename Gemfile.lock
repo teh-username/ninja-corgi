@@ -63,6 +63,10 @@ GEM
     daemons (1.2.3)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
+    dotenv (2.0.2)
+    dotenv-rails (2.0.2)
+      dotenv (= 2.0.2)
+      railties (~> 4.0)
     erubis (2.7.0)
     eventmachine (1.0.8)
     execjs (2.6.0)
@@ -157,6 +161,8 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     rdoc (4.2.0)
+    recaptcha (0.6.0)
+      json
     ruby-progressbar (1.7.5)
     sass (3.4.19)
     sass-rails (5.0.2)
@@ -204,6 +210,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
   byebug (= 3.4.0)
   coffee-rails (= 4.1.0)
+  dotenv-rails
   font-awesome-rails
   guard-minitest (= 2.3.1)
   jbuilder (= 2.2.3)
@@ -212,6 +219,7 @@ DEPENDENCIES
   minitest-reporters (= 1.0.5)
   mysql2 (~> 0.3.18)
   rails (= 4.2.2)
+  recaptcha
   sass-rails (= 5.0.2)
   sdoc (= 0.4.0)
   spring (= 1.1.3)
