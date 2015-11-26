@@ -1,8 +1,5 @@
 # config/initializers/recaptcha.rb
 
-# Bundler.require(*Rails.groups)
-# Dotenv::Railtie.load
-
 Recaptcha.configure do |config|
   config.public_key  = ENV['RECAPTCHA_PUBLIC']
   config.private_key = ENV['RECAPTCHA_SECRET']
