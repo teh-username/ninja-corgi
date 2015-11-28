@@ -66,6 +66,9 @@ class MessageTest < ActiveSupport::TestCase
   test "content should not be valid" do
     @message.content = " "
     assert_not @message.valid?
+
+    @message.content = "a" * 256
+    assert_not @message.valid?
   end
 
   test "email should be lowercase" do

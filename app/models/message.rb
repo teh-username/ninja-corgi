@@ -12,6 +12,6 @@ class Message < ActiveRecord::Base
 
   validates :subject, length: { maximum: 30 }, presence: true
 
-  validates :content, presence: true
+  validates :content, length: {maximum: 255},  presence: true
 
 end
