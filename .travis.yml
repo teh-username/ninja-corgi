@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+  - 2.0.0
+  - 2.2.2-p95
+
+before_install:
+  - 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
+
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - bundle exec rake db:create db:migrate --trace
+
+script:
+  - bundle exec rake
+
+env:
+  global:
+    -  RAILS_ENV=test
