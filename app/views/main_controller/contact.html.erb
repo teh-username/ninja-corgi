@@ -9,7 +9,7 @@
       <% end %>
 
       <h3 class="text-center">Have a quick message for me?</h3>
-      <%= form_for(@message, url: {action: "message"}, method: :post) do |f| %>
+      <%= form_for(@message, url: contact_path, method: :post) do |f| %>
         <div class="form-group">
           <div class="row">
             <% msg = @message.errors.full_messages_for(:first_name) %>
