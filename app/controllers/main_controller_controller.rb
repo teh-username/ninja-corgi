@@ -19,7 +19,7 @@ class MainControllerController < ApplicationController
       flash[:success] = "Thanks! I'll get back right at you at the speed of light!"
       redirect_to action: 'contact'
     else
-      flash[:danger] = "Please click the little box down there. I have trust issues with bots :(" if !@is_legit_user
+      flash.now[:danger] = "Please click the little box down there. I have trust issues with bots :(" if !@is_legit_user
       flash.delete("recaptcha_error")
       render 'contact'
     end
