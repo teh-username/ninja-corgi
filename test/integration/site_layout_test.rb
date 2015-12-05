@@ -4,7 +4,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
   test "check header" do
     # get index page
     get root_path
-    assert_template 'main_controller/index'
+    assert_template 'main/index'
 
     # check two hyperlinks back to root
     assert_select "a[href=?]", root_path, count: 2

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  root 'main_controller#index'
-  get 'about' => 'main_controller#about'
-  get 'portfolio' => 'main_controller#portfolio'
-  get 'contact' => 'main_controller#contact'
+  root 'main#index'
+  get 'about' => 'main#about'
+  get 'portfolio' => 'main#portfolio'
+  get 'contact' => 'main#contact'
 
-  post 'contact' => 'main_controller#message'
+  post 'contact' => 'main#message'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -57,7 +57,7 @@ Rails.application.routes.draw do
   # Example resource route within a namespace:
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
+  #     # (app/controllers/admin/products.rb)
   #     resources :products
   #   end
 end
