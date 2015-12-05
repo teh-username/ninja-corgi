@@ -17,58 +17,74 @@ class MessageTest < ActiveSupport::TestCase
   end
 
   test "first name should be valid" do
-    @message.first_name = "   "
-    assert_not @message.valid?
+    invalid_first_names = [
+      "",
+      "    ",
+      "h@xx0r",
+      "a" * 31
+    ]
 
-    @message.first_name = "h@xx0r"
-    assert_not @message.valid?
-
-    @message.first_name = "a" * 31
-    assert_not @message.valid?
+    invalid_first_names.each do |first_name|
+      @message.first_name = first_name
+      assert_not @message.valid?
+    end
   end
 
   test "last name should not be valid" do
-    @message.last_name = "   "
-    assert_not @message.valid?
+    invalid_last_names = [
+      "",
+      "    ",
+      "l33t",
+      "a" * 31
+    ]
 
-    @message.last_name = "l33t"
-    assert_not @message.valid?
-
-    @message.first_name = "a" * 31
-    assert_not @message.valid?
+    invalid_last_names.each do |last_name|
+      @message.last_name = last_name
+      assert_not @message.valid?
+    end
   end
 
   test "email should not be valid" do
-    @message.email = "h@xxor..com"
-    assert_not @message.valid?
+    invalid_emails = [
+      "h@xxor..com", 
+      "kylo.com", 
+      "kylo@com", 
+      "kylo_at_ren.org", 
+      "" ,
+      "     ", 
+      ("kylo@ren.com" * 255)
+    ]
 
-    @message.email = "kylo.com"
-    assert_not @message.valid?
-
-    @message.email = "kylo@com"
-    assert_not @message.valid?
-
-    @message.email = "   "
-    assert_not @message.valid?
-
-    @message.email = "kylo@ren.com" * 255
-    assert_not @message.valid?
+    invalid_emails.each do |email|
+      @message.email = email
+      assert_not @message.valid?
+    end
   end
 
   test "subject should not be valid" do
-    @message.subject = " "
-    assert_not @message.valid?
+    invalid_subjects = [
+      "",
+      "   ",
+      "a" * 31
+    ]
 
-    @message.subject = "a" * 31
-    assert_not @message.valid?
+    invalid_subjects.each do |subject|
+      @message.subject = subject
+      assert_not @message.valid?
+    end
   end
 
   test "content should not be valid" do
-    @message.content = " "
-    assert_not @message.valid?
+    invalid_contents = [
+      "",
+      "   ",
+      "a" * 256
+    ]
 
-    @message.content = "a" * 256
-    assert_not @message.valid?
+    invalid_contents.each do |content|
+      @message.content = content
+      assert_not @message.valid?
+    end
   end
 
   test "email should be lowercase" do
