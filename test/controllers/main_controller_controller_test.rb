@@ -15,4 +15,9 @@ class MainControllerControllerTest < ActionController::TestCase
     get :portfolio
     assert_response :success
   end
+
+  test "should get contact me" do
+    get :contact
+    assert_response :success
+  end
 end
