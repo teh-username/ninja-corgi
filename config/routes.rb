@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
-  root 'main#index'
-  get 'about' => 'main#about'
-  get 'portfolio' => 'main#portfolio'
-  get 'contact' => 'main#contact'
+  # Public Routes
+  root                   'main#index'
+  get     'about'     => 'main#about'
+  get     'portfolio' => 'main#portfolio'
+  get     'contact'   => 'main#contact'
+  post    'contact'   => 'main#message'
 
-  post 'contact' => 'main#message'
+  # Backend Routes
+  get     'login'     => 'sessions#new'
+  post    'login'     => 'sessions#create'
+  delete  'logout'    => 'sessions#destroy'
+  get     'admin'     => 'admin#index'
+  get     'admin/messages'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

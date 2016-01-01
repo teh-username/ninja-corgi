@@ -1,0 +1,23 @@
+<% provide(:title, 'Messages') %>
+<div id="page-wrapper">
+  <div class="container-admin">
+    <% @messages.each do |message| %>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="panel panel-primary">
+            <% title = "#{message[:subject]} || #{message[:first_name]} #{message[:last_name]} <#{message[:email]}> - #{message[:created_at]}" %>
+            <div class="panel-heading">
+              <%= content_tag(:h3, title, class: "panel-title") %>
+            </div>
+            <div class="panel-body">
+              <%= message[:content] %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <hr class="dashed"><br/>
+    <% end %>
+  </div>
+</div>

@@ -1,7 +1,5 @@
 <!-- Render Head -->
 <% content_for :head do %>
-  <%= render 'layouts/analytics' %>
-
   <!-- Other things to be rendered -->
   <% if content_for? :addtl_head %>
     <%= yield :addtl_head %>
@@ -11,15 +9,13 @@
 
 <!-- Render Body -->
 <% content_for :body do %>
-  <%= render 'layouts/navbar' %>
+  <%= render 'layouts/sidebar' %>
 
   <% flash.each do |message_type, message| %>
     <%= content_tag(:div, message, class: "alert alert-#{message_type} text-center") %>
   <% end %>
 
   <%= yield %>
-
-  <%= render 'layouts/footer' %>
 <% end %>
 
 <!-- Render Base Template -->

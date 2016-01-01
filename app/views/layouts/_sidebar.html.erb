@@ -1,0 +1,52 @@
+<!-- Most of the stuff here were ninja'd from https://github.com/IronSummitMedia/startbootstrap-sb-admin -->
+<div class="container">
+  <div id="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            <span><i class="fa fa-fw fa-crosshairs fa-2x"></i></span> <%= current_user[:name] %>
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+
+      <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav side-nav">
+          <li>
+            <%= link_to admin_path do %>
+              <i class="fa fa-fw fa-dashboard"></i> Dashboard
+            <% end %>
+          </li>
+          <li>
+            <%= link_to 'admin/messages' do %>
+              <i class="fa fa-fw fa-envelope"></i> Messages
+            <% end %>
+          </li>
+          <li>
+            <a href="javascript:;" data-toggle="collapse" data-target="#configs"><i class="fa fa-fw fa-file-text-o"></i> Ara Configs<i class="fa fa-fw fa-caret-down"></i></a>
+            <ul id="configs" class="collapse">
+              <li>
+                <a href="#">Stuffs 1</a>
+              </li>
+              <li>
+                <a href="#">Stuffs 2</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>

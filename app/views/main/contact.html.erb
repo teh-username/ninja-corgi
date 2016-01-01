@@ -1,13 +1,13 @@
 <% provide(:title, 'Contact Me') %>
+
+<% content_for :addtl_head do %>
+  <%= render 'layouts/recaptcha' %>
+<% end %>
+
 <div class="container">
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-
-      <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-      <% end %>
-
       <h3 class="text-center">Have a quick message for me?</h3>
       <%= form_for(@message, url: contact_path, method: :post) do |f| %>
         <div class="form-group">
@@ -34,56 +34,56 @@
               </div>
             </div>
           </div>
+        </div>
+        <% msg = @message.errors.full_messages_for(:email) %>
+        <div class="form-group <%= 'has-error' if msg.count > 0 %>">
+          <div class="row">
+            <div class="col-md-12">
+              <%= f.label :email, 'Contact Email*' %>
+              <%= f.email_field :email, class: "form-control", placeholder: "I'll reply to this email", required: true %>
+              <% if msg.count > 0 %>
+              <span class="help-block"><%= msg.first %></span>
+            <% end %>
+            </div>
           </div>
-            <% msg = @message.errors.full_messages_for(:email) %>
-            <div class="form-group <%= 'has-error' if msg.count > 0 %>">
-              <div class="row">
-                <div class="col-md-12">
-                  <%= f.label :email, 'Contact Email*' %>
-                  <%= f.email_field :email, class: "form-control", placeholder: "I'll reply to this email", required: true %>
-                  <% if msg.count > 0 %>
-                  <span class="help-block"><%= msg.first %></span>
-                <% end %>
-                </div>
-              </div>
+        </div>
+        <% msg = @message.errors.full_messages_for(:subject) %>
+        <div class="form-group <%= 'has-error' if msg.count > 0 %>">
+          <div class="row">
+            <div class="col-md-12">
+              <%= f.label :subject, 'Subject*' %>
+              <%= f.text_field :subject, class: "form-control", placeholder: "Your message in a nutshell", required: true %>
+              <% if msg.count > 0 %>
+              <span class="help-block"><%= msg.first %></span>
+            <% end %>
             </div>
-            <% msg = @message.errors.full_messages_for(:subject) %>
-            <div class="form-group <%= 'has-error' if msg.count > 0 %>">
-              <div class="row">
-                <div class="col-md-12">
-                  <%= f.label :subject, 'Subject*' %>
-                  <%= f.text_field :subject, class: "form-control", placeholder: "Your message in a nutshell", required: true %>
-                  <% if msg.count > 0 %>
-                  <span class="help-block"><%= msg.first %></span>
-                <% end %>
-                </div>
-              </div>
+          </div>
+        </div>
+        <% msg = @message.errors.full_messages_for(:content) %>
+        <div class="form-group <%= 'has-error' if msg.count > 0 %>">
+          <div class="row">
+            <div class="col-md-12">
+              <%= f.label :content, 'Message*' %>
+              <%= f.text_area :content, class: "form-control", placeholder: "What do you want to say?", rows: 5, required: true %>
+              <% if msg.count > 0 %>
+              <span class="help-block"><%= msg.first %></span>
+            <% end %>
             </div>
-            <% msg = @message.errors.full_messages_for(:content) %>
-            <div class="form-group <%= 'has-error' if msg.count > 0 %>">
-              <div class="row">
-                <div class="col-md-12">
-                  <%= f.label :content, 'Message*' %>
-                  <%= f.text_area :content, class: "form-control", placeholder: "What do you want to say?", rows: 5, required: true %>
-                  <% if msg.count > 0 %>
-                  <span class="help-block"><%= msg.first %></span>
-                <% end %>
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-12">
+              <label for="message">Anti Bot Thingy*</label>
+              <%= recaptcha_tags %>
             </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-md-12">
-                  <label for="message">Anti Bot Thingy*</label>
-                  <%= recaptcha_tags %>
-                </div>
-              </div>
-            </div>
-            <%= f.submit "Send!", class: "btn btn-default" %>
-        <% end %>
-      </div>
+          </div>
+        </div>
+        <%= f.submit "Send!", class: "btn btn-default" %>
+      <% end %>
     </div>
-    <div class="col-md-3"></div>
+  </div>
+  <div class="col-md-3"></div>
   <br/>
   <hr class="solid">
   <div class="row">

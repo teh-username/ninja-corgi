@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+    <title><%="#{yield(:title)} | LA Roberto"%></title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+    <%= content_for?(:head) ? yield(:head) : yield %>
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+  <body>
+    <%= content_for?(:body) ? yield(:body) : yield %>
+  </body>
+</html>
