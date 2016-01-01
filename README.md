@@ -4,7 +4,7 @@
 
 ---
 ### Live Site
-Live version can be found [here](http://laroberto.xyz/).
+Live version can be found [here](https://laroberto.xyz/).
 
 ---
 ### Stuffs
@@ -34,7 +34,8 @@ To run the test suite simply execute:
  
 ### TO-DOs
 0. Moar unit tests
-1. Create deploy script
-2. Travis-CI
-3. Login / Contact me page
-4. Authy
+~~1. Create deploy script~~
+~~2. Travis-CI~~
+~~3. Login / Contact me page~~
+~~4. Authy~~
+5. Setup Capistrano
