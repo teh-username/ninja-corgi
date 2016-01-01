@@ -7,9 +7,9 @@
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">
+          <%= link_to(admin_path, class: "navbar-brand") do %>
             <span><i class="fa fa-fw fa-crosshairs fa-2x"></i></span> <%= current_user[:name] %>
-          </a>
+          <% end %>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -30,7 +30,7 @@
             <% end %>
           </li>
           <li>
-            <%= link_to 'admin/messages' do %>
+            <%= link_to admin_messages_path do %>
               <i class="fa fa-fw fa-envelope"></i> Messages
             <% end %>
           </li>

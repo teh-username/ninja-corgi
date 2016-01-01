@@ -13,6 +13,6 @@ module SessionsHelper
   end
 
   def logged_in?
-    !@current_user.nil?
+    session.key?(:user_id)
   end
 end

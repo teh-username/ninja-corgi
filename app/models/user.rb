@@ -12,4 +12,10 @@ class User < ActiveRecord::Base
 
   # make model use passwords
   has_secure_password
+
+  # Creates a bcrypt hash of whatever
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
 end
