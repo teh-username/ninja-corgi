@@ -14,7 +14,7 @@ gem 'mysql2',           '~> 0.3.18'
 gem 'font-awesome-rails'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'dotenv-rails', :groups => [:development, :test, :production]
-gem 'rack-cache'
+gem 'rack-cache', require: 'rack/cache'
 
 group :development, :test do
   gem 'byebug',      '3.4.0'
